@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script>
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+    $(document).bind('mobileinit',function(){
+        $.mobile.pushStateEnabled = false;
+    });
+	</script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script type="text/javascript">
+  $(document).bind('pageinit', function() {
+    $('#helpButton').bind('click', function(e) {
+
+    });
+  });
+   $(function(){
+    var VSeek = 1;
+    var VPick = 1;
+    var VClear = 1;
+    var VMagic = 1;
+    var Vm2 = 1;
+    var Vm3 = 1;
+    $('.help').bind( "tap", function( event ) {
+      $( event.target ).hide();
+    });
+
+    $('#colorSeek').bind( "swipe", function( event ) {
+      if(VSeek === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorSeek-2.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/colorSeek-1.mp3'
+        audio.play();
+      }else if (VSeek === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorSeek-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/colorSeek-2.mp3'
+        audio.play();
+      }else if(VSeek === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorSeek-4.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/colorSeek-3.mp3'
+        audio.play();
+      }else if (VSeek === 4){
+        $( event.target ).css({backgroundImage: "url(img/colorSeek-1.png)"});
+        VSeek = 0;
+      }
+
+      VSeek++;
+    });
+
+    $('#colorClear').bind( "swipe", function( event ) {
+      if(VClear === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-help.png)"});
+      }else if (VClear === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-2.jpg)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VClear === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-3.jpg)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VClear === 4){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-4.jpg)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VClear === 5){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-5.jpg)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VClear === 6){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-6.jpg)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VClear === 7){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-7.gif)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/final.mp3'
+        audio.play();
+      }else if (VClear === 8){
+        $( event.target ).css({backgroundImage: "url(img/colorClear-1.jpg)"});
+        VClear = 0;
+      }
+      VClear++;
+    });
+
+    $('#colorMagic').bind( "swipe", function( event ) {
+      if(VMagic === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-help.png)"});
+      }else if (VMagic=== 2){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-2.png)"});
+      }else if(VMagic === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-3.png)"});
+      }else if(VMagic === 4){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-4.png)"});
+      }else if(VMagic === 5){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-5.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/final.mp3'
+        audio.play();
+      }else if (VMagic=== 6){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-1.png)"});
+        VMagic = 0;
+      }
+      VMagic++;
+    });
+
+    $('#colorMatch-two').bind( "swipe", function( event ) {
+      if(Vm2 === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-two-2.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if (Vm2 === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-two-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if (Vm2 === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-two-1.png)"});
+        Vm2 = 0;
+      }
+      Vm2++;
+    });
+
+    $('#colorMatch-three').bind( "swipe", function( event ) {
+      if(Vm3 === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-three-2.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if (Vm3 === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-three-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if (Vm3 === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-three-1.png)"});
+        Vm3 = 0;
+      }
+      Vm3++;
+    });
+
+    $('#colorPick').bind( "swipe", function( event ) {
+      if(VPick === 1){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-2.png)"});
+      }else if (VPick === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/AO.mp3'
+        audio.play();
+      }else if(VPick === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-4.png)"});
+      }else if(VPick === 4){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-5.png)"});
+      }else if (VPick === 5){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-1.png)"});
+        VPick = 0;
+      }
+      VPick++;
+    });
+   });
+</script>
+<body>
+
+<div data-role="page" id="homePage">
+		<a href="#bar"><img src="img/homePage.gif"  ismap="ismap" usemap="#map" style = "width: 100%; height : 100% "></a>
+
+		<map name="map">
+			<area coords="0,0,400,200" href="#colorSeek-startPage">
+			<area coords="0,500,400,800" href="#colorMatch-startPage">
+			<area coords="650,550,1200,800" href="#colorPick-startPage">
+			<area coords="650,0,1200,400" href="#colorClear-startPage">
+      <area coords="400,250,600,650" href="#colorMagic-startPage">
+		</map>
+</div><!-- /page -->
+
+<!-- Start of color seek page -->
+<div data-role="page" id="colorSeek-startPage">
+  <a href="#colorSeek"><img src="img/colorSeek-startPage.png"  ismap="ismap" style = "width: 100%; height : 100% "></a>
+</div><!-- /page -->
+
+<!-- Start of color seek page -->
+<div data-role="page" id="colorSeek">
+  <img class="help help-init" src="img/colorSeek-help-init.png" style = "width: 100%; height : 100% " />
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true">
+      <i class="fa fa-home fa-2x"></i></a>
+    <a href="#colorSeek-help" class="homeButton pull-right" data-role="button" data-inline="true" style="position: relative; left: -3px">
+    <i class="fa fa-question fa-2x"></i></a>
+  </div>
+</div><!-- /page -->
+
+<div data-role="page" id="colorSeek-help">
+  <a href="#colorSeek"><img src="img/colorSeek-help.png" style = "width: 100%; height : 100% "></a>
+
+</div><!-- /page -->
+
+<div data-role="page" id="colorPick-help">
+  <a href="#colorPick"><img src="img/colorPick-help.png" style = "width: 100%; height : 100% "></a>
+
+</div><!-- /page -->
+
+<div data-role="page" id="colorClear-help">
+  <a href="#colorClear"><img src="img/colorClear-help.png" style = "width: 100%; height : 100% "></a>
+
+</div><!-- /page -->
+
+<!-- Start of color pick page -->
+<div data-role="page" id="colorPick-startPage">
+  <a href="#colorPick"><img src="img/colorPick-startPage.png"  ismap="ismap" style = "width: 100%; height : 100% "></a>
+</div><!-- /page -->
+
+<!-- Start of color pick page -->
+<div data-role="page" id="colorPick">
+  <!-- <img class="help help-init" src="img/colorPick-help-init.png" style = "width: 100%; height : 100% " /> -->
+
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true" style="">
+    <i class="fa fa-home fa-2x"></i></a>
+    <a href="#colorPick-help" class="homeButton pull-right" data-role="button" data-inline="true" style="position: relative; left: -3px">
+    <i class="fa fa-question fa-2x"></i></a>
+  </div>
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorClear-startPage">
+  <a href="#colorClear"><img src="img/colorClear-startPage.png" style = "width: 100%; height : 100% "></a>
+
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorClear">
+  <img class="help help-init" src="img/colorClear-help-init.gif" style = "width: 100%; height : 100% " />
+
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true">
+    <i class="fa fa-home fa-2x"></i></a>
+    <a href="#colorClear-help" class="homeButton pull-right" data-role="button" data-inline="true" style="position: relative; left: -3px">
+    <i class="fa fa-question fa-2x"></i></a>
+  </div>
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorMagic-startPage">
+  <a href="#colorMagic"><img src="img/colorMagic-startPage.png" style = "width: 100%; height : 100% "></a>
+
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorMagic">
+  <img class="help help-init" src="img/colorMagic-help-init.gif" style = "width: 100%; height : 100% " />
+
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true">
+    <i class="fa fa-home fa-2x"></i></a>
+  </div>
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorMatch-startPage">
+  <img src="img/colorMatch-startPage.png"  ismap="ismap" usemap="#map1" style = "width: 100%; height : 100% ">
+  <map name="map1">
+    <area coords="0,0,500,800" href="#colorMatch-two">
+    <area coords="500,0,1200,800" href="#colorMatch-three">
+  </map>
+</div><!-- /page -->
+
+<!-- Start of color clear page -->
+<div data-role="page" id="colorMatch-two">
+  <!-- <img class="help help-init" src="img/colorClear-help-init.png" style = "width: 100%; height : 100% " /> -->
+
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true">
+    <i class="fa fa-home fa-2x"></i></a>
+    <!-- <a href="#colorClear-help" class="homeButton pull-right" data-role="button" data-inline="true" style="position: relative; left: -3px">
+    <i class="fa fa-question fa-2x"></i></a> -->
+  </div>
+</div><!-- /page -->
+
+<div data-role="page" id="colorMatch-three">
+  <!-- <img class="help help-init" src="img/colorClear-help-init.png" style = "width: 100%; height : 100% " /> -->
+
+  <div class="buttons">
+    <a href="#homePage" class="homeButton" data-role="button" data-inline="true">
+    <i class="fa fa-home fa-2x"></i></a>
+    <!-- <a href="#colorClear-help" class="homeButton pull-right" data-role="button" data-inline="true" style="position: relative; left: -3px">
+    <i class="fa fa-question fa-2x"></i></a> -->
+  </div>
+</div><!-- /page -->
+
+
+
+	<script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
