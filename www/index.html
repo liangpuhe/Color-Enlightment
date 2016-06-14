@@ -75,7 +75,7 @@
       if(VSeek === 1){
         $( event.target ).css({backgroundImage: "url(img/colorSeek-2.png)"});
         var audio = document.createElement('audio');
-        audio.src = 'audio/colorSeek-1.mp3'
+        audio.src = 'audio/escape.mp3'
         audio.play();
       }else if (VSeek === 2){
         $( event.target ).css({backgroundImage: "url(img/colorSeek-3.png)"});
@@ -85,9 +85,14 @@
       }else if(VSeek === 3){
         $( event.target ).css({backgroundImage: "url(img/colorSeek-4.png)"});
         var audio = document.createElement('audio');
+        audio.src = 'audio/colorSeek-1.mp3'
+        audio.play();
+      }else if(VSeek === 4){
+        $( event.target ).css({backgroundImage: "url(img/colorSeek-5.png)"});
+        var audio = document.createElement('audio');
         audio.src = 'audio/colorSeek-3.mp3'
         audio.play();
-      }else if (VSeek === 4){
+      }else if (VSeek === 5){
         $( event.target ).css({backgroundImage: "url(img/colorSeek-1.png)"});
         VSeek = 0;
       }
@@ -142,14 +147,25 @@
         $( event.target ).css({backgroundImage: "url(img/colorMagic-2.png)"});
       }else if(VMagic === 3){
         $( event.target ).css({backgroundImage: "url(img/colorMagic-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
       }else if(VMagic === 4){
         $( event.target ).css({backgroundImage: "url(img/colorMagic-4.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
       }else if(VMagic === 5){
         $( event.target ).css({backgroundImage: "url(img/colorMagic-5.png)"});
         var audio = document.createElement('audio');
+        audio.src = 'audio/right.mp3'
+        audio.play();
+      }else if(VMagic === 6){
+        $( event.target ).css({backgroundImage: "url(img/colorMagic-6.png)"});
+        var audio = document.createElement('audio');
         audio.src = 'audio/final.mp3'
         audio.play();
-      }else if (VMagic=== 6){
+      }else if (VMagic=== 7){
         $( event.target ).css({backgroundImage: "url(img/colorMagic-1.png)"});
         VMagic = 0;
       }
@@ -159,15 +175,14 @@
     $('#colorMatch-two').bind( "swipe", function( event ) {
       if(Vm2 === 1){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-two-2.png)"});
-        var audio = document.createElement('audio');
-        audio.src = 'audio/right.mp3'
-        audio.play();
+
       }else if (Vm2 === 2){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-two-3.png)"});
-        var audio = document.createElement('audio');
-        audio.src = 'audio/right.mp3'
-        audio.play();
+
       }else if (Vm2 === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-two-4.png)"});
+
+      }else if (Vm2 === 4){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-two-1.png)"});
         Vm2 = 0;
       }
@@ -177,15 +192,11 @@
     $('#colorMatch-three').bind( "swipe", function( event ) {
       if(Vm3 === 1){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-three-2.png)"});
-        var audio = document.createElement('audio');
-        audio.src = 'audio/right.mp3'
-        audio.play();
       }else if (Vm3 === 2){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-three-3.png)"});
-        var audio = document.createElement('audio');
-        audio.src = 'audio/right.mp3'
-        audio.play();
       }else if (Vm3 === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorMatch-three-4.png)"});
+      }else if (Vm3 === 4){
         $( event.target ).css({backgroundImage: "url(img/colorMatch-three-1.png)"});
         Vm3 = 0;
       }
@@ -194,17 +205,42 @@
 
     $('#colorPick').bind( "swipe", function( event ) {
       if(VPick === 1){
-        $( event.target ).css({backgroundImage: "url(img/colorPick-2.png)"});
+        $( event.target ).css({backgroundImage: "url(img/colorPick-help.png)"});
       }else if (VPick === 2){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-2.png)"});
+      }else if(VPick === 3){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-help-3.png)"});
+      }else if(VPick === 4){
         $( event.target ).css({backgroundImage: "url(img/colorPick-3.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/yellow.mp3'
+        audio.play();
+      }else if (VPick === 5){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-4.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/yellow.mp3'
+        audio.play();
+      }else if (VPick === 6){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-5.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/yellow.mp3'
+        audio.play();
+      }else if (VPick === 7){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-6.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/yellow.mp3'
+        audio.play();
+      }else if (VPick === 8){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-7.png)"});
+        var audio = document.createElement('audio');
+        audio.src = 'audio/yellow.mp3'
+        audio.play();
+      }else if (VPick === 9){
+        $( event.target ).css({backgroundImage: "url(img/colorPick-8.png)"});
         var audio = document.createElement('audio');
         audio.src = 'audio/AO.mp3'
         audio.play();
-      }else if(VPick === 3){
-        $( event.target ).css({backgroundImage: "url(img/colorPick-4.png)"});
-      }else if(VPick === 4){
-        $( event.target ).css({backgroundImage: "url(img/colorPick-5.png)"});
-      }else if (VPick === 5){
+      }else if (VPick === 10){
         $( event.target ).css({backgroundImage: "url(img/colorPick-1.png)"});
         VPick = 0;
       }
@@ -264,7 +300,7 @@
 
 <!-- Start of color pick page -->
 <div data-role="page" id="colorPick">
-  <!-- <img class="help help-init" src="img/colorPick-help-init.png" style = "width: 100%; height : 100% " /> -->
+  <img class="help help-init" src="img/colorPick-help-init.png" style = "width: 100%; height : 100% " />
 
   <div class="buttons">
     <a href="#homePage" class="homeButton" data-role="button" data-inline="true" style="">
